@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="6" viewBox="0 0 10 6">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Mask" d="M-5,3.515-8.694,0-10,1.243-5,6,0,1.243-1.306,0Z" transform="translate(7 5) rotate(-90)" fill="#111"/>
+    </clipPath>
+  </defs>
+  <g id="arrowDown" transform="translate(15 -7) rotate(90)" clip-path="url(#clip-path)">
+    <g id="Fill_Color_Title" data-name="Fill/Color/Title">
+      <rect id="Fill_Color_Black" data-name="Fill/Color/Black" width="20" height="20"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,81 @@
+.my-react-select-container.dark .my-react-select__control {
+    background-color: #222222;
+    border: 2px rgb(209, 213, 219) solid;
+}
+
+
+.my-react-select-container.dark .my-react-select__control--is-focused {
+    border: none;
+    outline: none;
+}
+
+.my-react-select-container.dark .my-react-select__control--is-focused:hover {
+    border: none;
+}
+
+.my-react-select-container.dark .my-react-select__menu {
+    background-color: #222222;
+    transition: all 0.5s ease-in-out;
+}
+
+.my-react-select-container.dark .my-react-select__option {
+    color: white;
+}
+
+.my-react-select-container.dark .my-react-select__option--is-selected {
+    background-color: white;
+    color: black;
+}
+
+
+.my-react-select-container.dark .my-react-select__input-container,
+.my-react-select-container.dark .my-react-select__placeholder,
+.my-react-select-container.dark .my-react-select__single-value {
+    color: white;
+}
+
+.my-react-select-container.dark .my-react-select__option--is-focused:not(.my-react-select__option--is-selected) {
+    background-color: #3b3b3b;
+    color: white;
+}
+
+/*------------------------------------*/
+
+.my-react-select-container .my-react-select__control {
+    background-color: white;
+}
+
+
+.my-react-select-container .my-react-select__control--is-focused {
+    border: none;
+}
+
+.my-react-select-container .my-react-select__control--is-focused:hover {
+    border: none;
+}
+
+.my-react-select-container .my-react-select__menu {
+    background-color: white;
+    transition: all 0.5s ease-in-out;
+}
+
+.my-react-select-container .my-react-select__option {
+    color: black;
+}
+
+.my-react-select-container .my-react-select__option--is-selected {
+    background-color: black;
+    color: white;
+}
+
+
+.my-react-select-container .my-react-select__input-container,
+.my-react-select-container .my-react-select__placeholder,
+.my-react-select-container .my-react-select__single-value {
+    color: black;
+}
+
+.my-react-select-container .my-react-select__option--is-focused:not(.my-react-select__option--is-selected) {
+    background-color: #f5f5f9;
+    color: black;
+}
