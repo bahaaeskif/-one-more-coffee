@@ -52,3 +52,8 @@ input:-webkit-autofill:active.dark {
     -webkit-box-shadow: 0 0 0 30px #222222 inset !important;
     -webkit-text-fill-color: white !important;
 }
+
+.active {
+    background-color: black;
+    color: white;
+}

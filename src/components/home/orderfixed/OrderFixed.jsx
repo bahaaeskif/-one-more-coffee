@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { RouteGlobal } from "../../../variables";
 function OrderFixed() {
     const { ui } = useSelector((state) => state.ui)
     const darkMode = ui.darkMode;
@@ -15,7 +16,7 @@ function OrderFixed() {
          ${darkMode ? ' bg-tertiaryDark' : 'bg-tertiaryLight'} font-body`}
             >
 
-                <Link to='/cart' className={`py-2 px-7 ${darkMode ? 'bg-green-600' : 'bg-green-500'} rounded-full text-white flex items-center gap-2 basis-1/6 `}>
+                <Link to={RouteGlobal.cart} className={`py-2 px-7 ${darkMode ? 'bg-green-600' : 'bg-green-500'} rounded-full text-white flex items-center gap-2 basis-1/6 `}>
                     <span ><i className='bx bxl-whatsapp text-3xl'></i></span><span className="text-center leading-5 tracking-wide text-sm">اطلب عن طريق <br /> الواتس</span>
                 </Link>
 

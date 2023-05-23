@@ -20,6 +20,3 @@ export const store = configureStore({
     middleware: [api]
 
 });
-
-
-console.log(store.getState())

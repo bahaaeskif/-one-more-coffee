@@ -1,6 +1,23 @@
 import QuantityController from "../../common/QuantityController";
+import { actions } from "../../store/ui";
+import { useSelector } from "react-redux";
+import { addToProductDatile } from "../../store/productDatiles";
+import ProductDatile from "../home/productDatile/ProductDatile";
+import { useDispatch } from "react-redux";
 
 function FilterItem({ filterListItems, darkMode, hundelIncrement, hundelDecrement }) {
+    const dispatch = useDispatch();
+
+    const showHundel = (product = {}) => {
+
+        dispatch(actions.showHundel());
+
+        dispatch(addToProductDatile(product));
+
+    }
+    const { datileShow } = useSelector((state) => state.ui.ui)
+    const { productDatile } = useSelector((state) => state.productDatile);
+
     return (
         <div className="mt-6  flex flex-wrap">
             {filterListItems.map((product) => {
@@ -8,7 +25,7 @@ function FilterItem({ filterListItems, darkMode, hundelIncrement, hundelDecremen
                     <div className="card w-full relative">
                         <div className="rounded-lg overflow-hidden mb-7 ">
                             <div className={`${darkMode ? ' bg-tertiaryDark' : 'bg-tertiaryLight'}  h-[140px] w-full`}>
-                                <img src={product.thumbnail} alt="" className="object-cover object-center h-[140px] w-full" />
+                                <img src={product.thumbnail} onClick={() => { showHundel(product) }} alt="" className="object-cover object-center h-[140px] w-full" />
                             </div>
                             <div className={`absolute left-[50%] 
                          rounded-lg 
@@ -31,6 +48,7 @@ function FilterItem({ filterListItems, darkMode, hundelIncrement, hundelDecremen
 
                 </div>
             })}
+            {<ProductDatile darkMode={darkMode} datileShow={datileShow} showHundel={showHundel} productDatiles={productDatile} />}
         </div>
     );
 }

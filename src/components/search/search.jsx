@@ -28,8 +28,9 @@ function Search() {
 
 
     const options = ["", ...category].map((item) => {
-        return { value: item, label: item ? item : 'الكل' };
+        return { value: item.id, label: item.name ? item.name : 'الكل' };
     })
+    console.log(options)
 
 
 

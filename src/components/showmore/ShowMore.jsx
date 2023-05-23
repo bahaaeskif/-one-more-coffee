@@ -1,6 +1,6 @@
 
 
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import { actions } from "../../store/ui";
@@ -17,10 +17,10 @@ function ShowMore() {
 
     const { listItems } = useSelector((state) => state.products);
 
-    const { state } = useLocation();
+    const { id } = useParams();
 
     const products = listItems.filter((x) => {
-        return x.category === state.category;
+        return x.category === id
     })
 
     const showHundel = (product = {}) => {

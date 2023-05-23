@@ -20,7 +20,7 @@ function
     return (
         <div className={`p-3 shadow-xl w-full font-body  ${darkMode ? ' bg-tertiaryDark' : 'bg-white'} rounded-2xl mb-3`}>
             <div className={`flex`}>
-                <div className=' overflow-hidden rounded-md '>
+                <div className={` overflow-hidden rounded-md bg-slate-100 basis-[30%]  ${darkMode ? ' bg-gray-900' : 'bg-slate-100 '}`}>
                     <img onClick={() => showHundel(item)} src={item.thumbnail} alt="one more" className='object-cover h-[140px] object-center ' />
                 </div>
                 <div className=' basis-[80%] px-4'>

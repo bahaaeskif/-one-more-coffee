@@ -39,11 +39,11 @@ function Home() {
 
             {loading && <SkeletonCategory />}
 
-            <div className="pt-[80px]"> {category?.map((kind, index) => {
+            <div className="pt-[80px] md:pt-[90px] "> {category?.map((kind, index) => {
                 return <CardsSection kind={kind} key={index} showHundel={showHundel} />
             })}</div>
 
-            {loading && loadingArr.map(() => <CardsSkeleton />)}
+            {loading && loadingArr.map((x, index) => <CardsSkeleton key={index} />)}
 
             <OrderFixed />
 

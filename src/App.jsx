@@ -18,6 +18,7 @@ import Nav from './skeleton/nav'
 import Cart from './components/cart/Cart'
 import { useEffect } from 'react'
 import axios from 'axios'
+import { RouteGlobal } from './variables'
 
 
 import { apiCallBegan } from './store/actionsApi'
@@ -40,9 +41,9 @@ function App() {
       <Routes>
         <Route path='/' element={<SharedLayout />}>
           <Route index element={<Home />} />
-          <Route path='search' element={<Search />} />
-          <Route path='cart' element={<Cart />} />
-          <Route path='daitles' element={<ShowMore />} />
+          <Route path={`${RouteGlobal.search}`} element={<Search />} />
+          <Route path={`${RouteGlobal.cart}`} element={<Cart />} />
+          <Route path={`${RouteGlobal.detailes}${`/:id`}`} element={<ShowMore />} />
         </Route>
       </Routes>
     </div>

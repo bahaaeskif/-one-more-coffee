@@ -30,28 +30,33 @@ const slice = createSlice({
             state.loading = true
         },
         productsRecive: (state, { payload }) => {
-            state.listItems = payload.map((item) => {
-                return { ...item, quantity: 0 }
-            })
-            // state.listItems = payload;
             state.loading = false
 
-            const categorizedData = state.listItems.reduce((acc, curr, index) => {
-                const { id, category, title, price, quantity, thumbnail } = curr;
+            const products = [];
+            console.log(payload
+            );
+            payload.forEach((x) => {
+                x.products.map((y) => {
+                    products.push({ ...y, category: x.id })
+                })
+            })
+            state.listItems = products.map((item) => {
+                return { ...item, quantity: 0 }
+            });
 
-
-                if (!acc[category]) {
-                    acc[category] = {
-                    };
+            let categoryNames = payload.map((x) => {
+                return {
+                    id: x.id,
+                    name: x.name,
+                    products: x.products
                 }
-                acc[category];
+            })
+            categoryNames = categoryNames.filter((x) => {
+                return x.products.length > 0;
+            })
+            console.log(categoryNames)
+            state.category = categoryNames;
 
-                return acc;
-            }, {});
-
-            const categories = Object.keys(categorizedData);
-
-            state.category = categories;
         },
         clearProduct: (state) => {
             state.listItems = state.listItems.map((x) => {
@@ -76,5 +81,8 @@ export const {
     addQuantity,
     productsRequst,
     productsRecive, clearProduct } = slice.actions
+
+
+
 
 export default slice.reducer

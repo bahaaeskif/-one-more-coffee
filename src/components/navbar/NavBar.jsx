@@ -6,6 +6,8 @@ import logoDark from '../../assets/LogoDark.png'
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
 import { actions } from '../../store/ui';
+import { RouteGlobal } from '../../variables';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 //import components
 import Nav from '../../skeleton/nav';
@@ -19,8 +21,14 @@ function Navbar() {
 
     const { amount } = useSelector((state) => state.cart)
 
+    const { pathname } = useLocation();
+    const navigate = useNavigate()
 
-
+    const hundelBack = () => {
+        if (pathname !== '/') {
+            navigate('/')
+        }
+    }
     const hundelSwitch = () => {
         dispatch(actions.switch());
     }
@@ -40,17 +48,20 @@ function Navbar() {
                             </button>
                         </div>
                         <div className="logo w-[60px]">
-                            <Link to='/'><img src={darkMode ? logoDark : logo} alt="logo" className={`p-1 bg-cover ${darkMode ? 'w-[60px]' : ''} `} /></Link>
+                            <Link to={RouteGlobal.home}><img src={darkMode ? logoDark : logo} alt="logo" className={`p-1 bg-cover ${darkMode ? 'w-[60px]' : ''} `} /></Link>
                         </div>
 
                         <div className="flex items-center gap-2">
-                            <Link to="/search" className={`${darkMode ? ' bg-tertiaryDark' : ' bg-tertiaryLight'} px-2 py-1 rounded`}>
+                            <Link to={RouteGlobal.search} className={`${darkMode ? ' bg-tertiaryDark' : ' bg-tertiaryLight'} px-2 py-1 rounded`}>
                                 <i className={`bx bx-search-alt-2 text-md ${darkMode ? 'text-textDark' : ' text-textLight'} `}></i>
                             </Link>
-                            <Link to="/cart" className={`${darkMode ? ' bg-tertiaryDark' : ' bg-tertiaryLight'} px-2 py-1 rounded relative`}>
+                            <Link to={RouteGlobal.cart} className={`${darkMode ? ' bg-tertiaryDark' : ' bg-tertiaryLight'} px-2 py-1 rounded relative`}>
                                 <i className={`bx bx-shopping-bag text-md ${darkMode ? 'text-textDark' : ' text-textLight'}`}></i>
                                 {amount > 0 ? <div className={`absolute left-[-8px] top-[-5px] w-4 rounded-full h-4 text-textDark flex items-center justify-center text-xs font-mono ${darkMode ? 'bg-tertiaryLight text-textLight' : ' bg-tertiaryDark'}`}>{amount}</div> : null}
                             </Link>
+                            {pathname !== '/' && <button onClick={hundelBack} className={`${darkMode ? ' bg-tertiaryDark' : ' bg-tertiaryLight'} px-2 py-1 rounded relative`}>
+                                <i className={`bx bx-arrow-back ${darkMode ? 'text-textDark' : ' text-textLight'}`}></i>
+                            </button>}
                         </div>
                     </div>
                 </div >

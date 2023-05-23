@@ -39,7 +39,7 @@ function ProductDatile({ datileShow, showHundel, darkMode, productDatiles }) {
                     <div className={`basis-[53.3%] p-4 `}>
                         <div>
                             <div>
-                                <div className={`${darkMode ? ' text-textDark' : 'text-textLight'} text-base md:text-2xl lg:text-2xl mb-4`}>{productDatiles?.title}</div>
+                                <div className={`${darkMode ? ' text-textDark' : 'text-textLight'} text-base md:text-2xl lg:text-2xl mb-4`}>{productDatiles?.name}</div>
                                 <div className={` ${darkMode ? ' text-textDark' : 'text-textLight'} font-bold uppercase
                                 text-sm
                                md:text-xl
@@ -47,7 +47,8 @@ function ProductDatile({ datileShow, showHundel, darkMode, productDatiles }) {
                             `}>
                                     <span className='mb-3 inline-block'> {productDatiles?.price} sp</span>
                                 </div>
-                                <div className={`text-sm ${darkMode ? ' text-subTextDark' : 'text-subTextLight'}`}>{productDatiles?.descreption}</div>
+                                <div className={`text-sm ${darkMode ? ' text-subTextDark' : 'text-subTextLight'}`}>{productDatiles?.details
+                                }</div>
 
                             </div>
                             <div className={`lg:py-4 md:py-4 py-2 mt-4 md:mt-16 lg:mt-16 border-y-2  ${darkMode ? 'border-y-borderDark' : 'border-y-borderLight'} border-dashed flex items-center`}>
@@ -68,7 +69,7 @@ function ProductDatile({ datileShow, showHundel, darkMode, productDatiles }) {
                 {<div className={`hidden md:block lg:block  mt-4 md:mt-6 lg:mt-6 
                  border-solid border-2 overflow-hidden w-fit rounded-lg ${darkMode ? 'bg-[#404040] border-[#404040]' : 'bg-[#ddd] border-[#ddd]'} min-w-[275px] ${darkMode ? ' text-textDark' : 'text-textLight'}`}>
                     <div className={`flex m-3 justify-between items-center `}>
-                        <div className="font-bold">{productDatiles?.title}</div>
+                        <div className="font-bold">{productDatiles?.name}</div>
                         <div className={` fon bold flex text-center flex-col items-center justify-center `}>
                             <span className={`text-[13px] font-bold w-[67px]`}>
                                 السعر الأجمالي
